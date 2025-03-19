@@ -1,0 +1,59 @@
+"use client";
+import React from "react";
+import Link from "next/link";
+import { Menu } from "lucide-react";
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import { routes } from "@/app/index/NavBarIndex";
+
+const NavBar = () => {
+  return (
+    <nav className="px-16 items-center backdropblur h-24 flex sticky top-0 border-b-4 bg-background/80 bg-neutral-200 justify-between z-99">
+      <Link href={"/"}>
+        <h1 className="font-bold text-xl whitespace-nowrap">
+          ADRIAN KOK | BLOG
+        </h1>
+      </Link>
+      <ul className="w-full md:justify-end items-center space-x-4 hidden md:flex">
+        {routes.map((post, index: number) => (
+          <Link
+            href={post.route}
+            key={index}
+            className="transition-colors duration-300 hover:text-blue-600"
+          >
+            <li>{post.name}</li>
+          </Link>
+        ))}
+      </ul>
+      <Sheet>
+        <SheetTrigger>
+          <Menu size={18} className="md:hidden" />
+        </SheetTrigger>
+        <SheetContent className="mt-24">
+          <SheetHeader>
+            <SheetTitle>Pages</SheetTitle>
+          </SheetHeader>
+          <div className="relative">
+            <ul className="w-full items-center space-x-4 justify-center">
+              {routes.map((post, index: number) => (
+                <Link href={post.route} key={index}>
+                  <li className="text-center transition-colors duration-300 hover:text-red-500">
+                    {post.name}
+                  </li>
+                </Link>
+              ))}
+            </ul>
+          </div>
+        </SheetContent>
+      </Sheet>
+    </nav>
+  );
+};
+
+export default NavBar;
