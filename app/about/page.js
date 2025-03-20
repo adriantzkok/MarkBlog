@@ -2,12 +2,13 @@ import React from "react";
 import MaxWidthWrapper from "@/app/components/MaxWidthWrapper";
 import ImageFillWrapper from "../components/ImageFillWrapper";
 import AboutSkills from "../components/about/AboutSection";
+import SocialMedia from "../components/about/SocialMedia";
 
-const page = () => {
+const Page = () => {
   return (
     <MaxWidthWrapper>
-      <div className="w-full h-96 md:flex gap-3">
-        <div className="sm:w-1/2 md:w-3/4 h-full relative">
+      <div className="w-full h-[512px] flex flex-col md:flex-row">
+        <div className="w-full md:w-1/2 h-full relative shrink-0">
           <ImageFillWrapper
             className="w-full h-full"
             image_link={
@@ -15,10 +16,14 @@ const page = () => {
             }
           />
         </div>
-        <AboutSkills />
+
+        <div className="w-full md:w-1/2 flex flex-col justify-center p-4">
+          <AboutSkills />
+          <SocialMedia />
+        </div>
       </div>
     </MaxWidthWrapper>
   );
 };
 
-export default page;
+export default Page;

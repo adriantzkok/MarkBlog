@@ -35,7 +35,7 @@ const SpecificPostCard = ({
         setPostData(postMetadata);
       } catch (err: unknown) {
         setError(err); // Handle any errors
-        console.log(error);
+        console.error(error);
       } finally {
         setLoading(false); // Set loading to false when done
       }

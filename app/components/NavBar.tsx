@@ -4,7 +4,6 @@ import Link from "next/link";
 import { Menu } from "lucide-react";
 import {
   Sheet,
-  SheetClose,
   SheetContent,
   SheetHeader,
   SheetTitle,
@@ -42,11 +41,13 @@ const NavBar = () => {
           <div className="relative">
             <ul className="w-full items-center space-x-4 justify-center">
               {routes.map((post, index: number) => (
-                <Link href={post.route} key={index}>
-                  <li className="text-center transition-colors duration-300 hover:text-red-500">
-                    {post.name}
-                  </li>
-                </Link>
+                <SheetTrigger asChild key={index}>
+                  <Link href={post.route}>
+                    <li className="text-center transition-colors duration-300 hover:text-red-500">
+                      {post.name}
+                    </li>
+                  </Link>
+                </SheetTrigger>
               ))}
             </ul>
           </div>

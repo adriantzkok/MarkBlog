@@ -59,7 +59,7 @@ const TagFilter = () => {
   return (
     <>
       <TagFilterComboBox
-        placeholder="Select frameworks you like..."
+        placeholder="Select Tags..."
         // @ts-expect-error outside order component
         options={tags}
         emptyIndicator={

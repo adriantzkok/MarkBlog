@@ -17,28 +17,27 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { Dispatch, SetStateAction } from "react";
-import { IFilters } from "@/app/types/interface";
-
+import { useContext } from "react";
+import { FilterContext } from "../PostArea";
 interface Itopics {
   topic: string;
 }
 
 interface IPostFilterComboBox {
-  setFilters: Dispatch<SetStateAction<IFilters>>;
+  // setFilters: Dispatch<SetStateAction<IFilters>>;
   topics: Itopics[];
 }
 
 export function PostFilterComboBox({
-  setFilters,
+  // setFilters,
   topics,
 }: IPostFilterComboBox) {
+  const { setFilters } = useContext(FilterContext) || {};
+
   const [open, setOpen] = React.useState(false);
   const [value, setValue] = React.useState("");
-
   // Ensure alltopics is defined, either through props or const
   const alltopics = topics || []; // Use topics from props or an empty array
-
   return (
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
@@ -46,7 +45,7 @@ export function PostFilterComboBox({
           variant="combobox"
           role="combobox"
           aria-expanded={open}
-          className="w-[200px] justify-between text-muted-foreground"
+          className="lg:w-[200px] justify-between text-muted-foreground"
         >
           {value
             ? alltopics.find((atopic) => atopic.topic === value)?.topic
@@ -54,7 +53,7 @@ export function PostFilterComboBox({
           <ChevronsUpDown className="opacity-50" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[200px] p-0">
+      <PopoverContent className="lg:w-[200px] p-0">
         <Command>
           <CommandInput placeholder="Search Topics..." className="h-9" />
           <CommandList>
@@ -68,7 +67,7 @@ export function PostFilterComboBox({
                     setValue(currentValue === value ? "" : currentValue);
                     setFilters((prevFilters) => ({
                       ...prevFilters,
-                      topic_filter: currentValue, // Use currentValue instead of value
+                      topic_filter: value, // Use currentValue instead of value
                     }));
                     setOpen(false);
                   }}

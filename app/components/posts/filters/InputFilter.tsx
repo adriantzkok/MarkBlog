@@ -1,5 +1,5 @@
 import { Input } from "@/components/ui/input";
-import { FilterContext } from "../PostArea"; // Ensure the path is correct
+import { FilterContext } from "../PostArea";
 import { useContext } from "react";
 import { IFilterContext } from "@/app/types/interface";
 
@@ -10,16 +10,16 @@ const InputFilter = () => {
     const { value } = e.target;
     setFilters((prevFilters) => ({
       ...prevFilters,
-      input_filter: value, // Use input_filter instead of input
+      input_filter: value,
     }));
   };
 
   return (
     <>
       <Input
-        className="w-3/6 border-2 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="lg:w-3/6 border-2 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
         placeholder="Search Posts..."
-        value={filters?.input_filter || ""} // Access input_filter instead of input
+        value={filters?.input_filter || ""}
         onChange={handleChange}
       />
     </>
