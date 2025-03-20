@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import PostCard from "../PostCard";
+import PostCard from "@/app/components/PostCard";
 import { fetchPostMetadata } from "@/app/api/dbqueries";
 import Link from "next/link";
 

@@ -1,5 +1,5 @@
 "use client";
-import PostCard from "../PostCard";
+import PostCard from "@/app/components/PostCard";
 import Link from "next/link";
 import { ChevronsDown } from "lucide-react";
 import { IPostMetadata } from "@/app/types/interface";

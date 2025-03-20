@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { PostFilterComboBox } from "./PostFilterComboBox";
+import { PostFilterComboBox } from "@/app/components/posts/filters/PostFilterComboBox";
 import { fetchTopics } from "@/app/api/dbqueries";
 import _ from "lodash";
 import { ITopics } from "@/app/types/interface";

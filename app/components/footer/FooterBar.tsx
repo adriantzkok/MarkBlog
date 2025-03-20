@@ -1,6 +1,7 @@
 // Footer.jsx
 import React from "react";
-import MaxWidthWrapper from "../MaxWidthWrapper";
+import MaxWidthWrapper from "@/app/components/MaxWidthWrapper";
+import { FOOTER_NAME } from "@/app/index/FooterIndex";
 
 const FooterBar = () => {
   return (
@@ -8,7 +9,7 @@ const FooterBar = () => {
       <MaxWidthWrapper className="my-0">
         <div className="mx-auto relative text-center">
           <p className="mb-2 italic">
-            &copy; 2025 Adrian Kok. All rights reserved.
+            &copy; 2025 {FOOTER_NAME}. All rights reserved.
           </p>
         </div>
       </MaxWidthWrapper>

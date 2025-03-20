@@ -1,6 +1,6 @@
 import TagFilterComboBox from "@/app/components/posts/filters/TagFilterComboBox";
 import { useContext, useEffect, useState } from "react";
-import { FilterContext } from "../PostArea";
+import { FilterContext } from "@/app/components/posts/PostArea";
 import { fetchPostTags } from "@/app/api/dbqueries";
 
 interface ITag {

@@ -1,8 +1,7 @@
 import React from "react";
-import ImageFillWrapper from "./ImageFillWrapper";
+import ImageFillWrapper from "@/app/components/ImageFillWrapper";
 import { cn } from "@/lib/utils";
-import LoadingPostCard from "./loaders/LoadingPostCard";
-
+import LoadingPostCard from "@/app/components/loaders/LoadingPostCard";
 interface IPostCard {
   topic?: string; // Make topic optional
   title?: string; // Make title optional

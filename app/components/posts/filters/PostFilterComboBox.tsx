@@ -18,7 +18,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { useContext } from "react";
-import { FilterContext } from "../PostArea";
+import { FilterContext } from "@/app/components/posts/PostArea";
 interface Itopics {
   topic: string;
 }

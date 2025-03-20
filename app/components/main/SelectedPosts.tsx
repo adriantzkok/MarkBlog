@@ -1,5 +1,5 @@
 import React from "react";
-import SpecificPostCard from "./SpecificPostCard";
+import SpecificPostCard from "@/app/components/main/SpecificPostCard";
 const SelectedPosts = () => {
   return (
     <div className="flex flex-row md:grid md:grid-cols-3 gap-5 overflow-x-auto max-w-full">

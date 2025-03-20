@@ -2,8 +2,7 @@ import MaxWidthWrapper from "@/app/components/MaxWidthWrapper";
 import ImageFillWrapper from "@/app/components/ImageFillWrapper";
 import PostContainer from "@/app/components/PostContainer";
 import TopBottomLayout from "@/app/components/TopBottomLayout";
-import SelectedPosts from "./components/main/SelectedPosts";
-
+import SelectedPosts from "@/app/components/main/SelectedPosts";
 export default function Home() {
   return (
     <main>
@@ -13,13 +12,13 @@ export default function Home() {
             <ImageFillWrapper image_link="https://yemolfbfuywasvhymyos.supabase.co/storage/v1/object/public/Blog//bg-min.jpeg"></ImageFillWrapper>
           </div>
           <TopBottomLayout title="Highlighted Posts">
-            <SelectedPosts></SelectedPosts>
+            <SelectedPosts />
           </TopBottomLayout>
           <TopBottomLayout title="LotW Posts">
-            <PostContainer title_filter="LotW"></PostContainer>
+            <PostContainer title_filter="LotW" />
           </TopBottomLayout>
           <TopBottomLayout title="Data Engineering Posts">
-            <PostContainer topic_filter="Data Engineering"></PostContainer>
+            <PostContainer topic_filter="Data Engineering" />
           </TopBottomLayout>
         </div>
       </MaxWidthWrapper>

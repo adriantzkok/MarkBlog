@@ -1,7 +1,7 @@
 import React from "react";
-import TopicFilter from "./filters/TopicFilter";
-import InputFilter from "./filters/InputFilter";
-import TagFilter from "./filters/TagFilter";
+import InputFilter from "@/app/components/posts/filters/InputFilter";
+import TagFilter from "@/app/components/posts/filters/TagFilter";
+import TopicFilter from "@/app/components/posts/filters/TopicFilter";
 import {
   Sheet,
   SheetContent,

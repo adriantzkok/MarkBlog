@@ -1,8 +1,8 @@
 "use client";
-import TopicFilter from "./filters/TopicFilter";
-import InputFilter from "./filters/InputFilter";
-import TagFilter from "./filters/TagFilter";
-import FiltersSheet from "./FiltersSheet";
+import InputFilter from "@/app/components/posts/filters/InputFilter";
+import TagFilter from "@/app/components/posts/filters/TagFilter";
+import TopicFilter from "@/app/components/posts/filters/TopicFilter";
+import FiltersSheet from "@/app/components/posts/FiltersSheet";
 
 const FilterPostContainer = () => {
   return (

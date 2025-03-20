@@ -1,5 +1,5 @@
 import { Input } from "@/components/ui/input";
-import { FilterContext } from "../PostArea";
+import { FilterContext } from "@/app/components/posts/PostArea";
 import { useContext } from "react";
 import { IFilterContext } from "@/app/types/interface";
 
