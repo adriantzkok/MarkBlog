@@ -6,7 +6,7 @@ This is V2 of my personal blog project that I've been working on. It's a persona
 
 Significant changes from V1 include an update of the framework (now using NextJS), along with better performance, improved user interactivity, and
 
-<div style="text-align: center;">
+<div style="text-align: center; width: 100%;">
     <img src="https://github.com/adriantzkok/personal-blog-v2/blob/main/blogpreview.gif" alt="Personal Blog Demo">
 </div>
 
