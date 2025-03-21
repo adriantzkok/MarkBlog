@@ -14,6 +14,9 @@ export default function Home() {
           <TopBottomLayout title="Highlighted Posts">
             <SelectedPosts />
           </TopBottomLayout>
+          <TopBottomLayout title="Recent Posts">
+            <PostContainer />
+          </TopBottomLayout>
           <TopBottomLayout title="LotW Posts">
             <PostContainer title_filter="LotW" />
           </TopBottomLayout>
