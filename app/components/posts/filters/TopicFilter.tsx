@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { PostFilterComboBox } from "@/app/components/posts/filters/PostFilterComboBox";
+import { TopicFilterComboBox } from "@/app/components/posts/filters/TopicFilterComboBox";
 import { fetchTopics } from "@/app/api/dbqueries";
 import _ from "lodash";
 import { ITopics } from "@/app/types/interface";
@@ -22,7 +22,7 @@ const TopicFilter = () => {
 
   return (
     <>
-      <PostFilterComboBox
+      <TopicFilterComboBox
         // filters={filters}
         // setFilters={setFilters}
         topics={topics}

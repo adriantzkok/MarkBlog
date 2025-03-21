@@ -1,4 +1,4 @@
-"use client";
+"use client"; // This directive should be at the very top of your file
 
 import * as React from "react";
 import { Check, ChevronsUpDown } from "lucide-react";
@@ -19,25 +19,23 @@ import {
 } from "@/components/ui/popover";
 import { useContext } from "react";
 import { FilterContext } from "@/app/components/posts/PostArea";
+
 interface Itopics {
   topic: string;
 }
 
-interface IPostFilterComboBox {
-  // setFilters: Dispatch<SetStateAction<IFilters>>;
+interface ITopicFilterComboBox {
   topics: Itopics[];
 }
 
-export function PostFilterComboBox({
-  // setFilters,
-  topics,
-}: IPostFilterComboBox) {
+export function TopicFilterComboBox({ topics }: ITopicFilterComboBox) {
   const { setFilters } = useContext(FilterContext) || {};
 
   const [open, setOpen] = React.useState(false);
   const [value, setValue] = React.useState("");
-  // Ensure alltopics is defined, either through props or const
-  const alltopics = topics || []; // Use topics from props or an empty array
+  const alltopics = topics || [];
+  console.log(value);
+
   return (
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
@@ -64,11 +62,19 @@ export function PostFilterComboBox({
                   key={index}
                   value={atopic.topic}
                   onSelect={(currentValue) => {
-                    setValue(currentValue === value ? "" : currentValue);
-                    setFilters((prevFilters) => ({
-                      ...prevFilters,
-                      topic_filter: value, // Use currentValue instead of value
-                    }));
+                    if (currentValue === value) {
+                      setValue("");
+                      setFilters((prevFilters) => ({
+                        ...prevFilters,
+                        topic_filter: "",
+                      }));
+                    } else {
+                      setValue(currentValue);
+                      setFilters((prevFilters) => ({
+                        ...prevFilters,
+                        topic_filter: currentValue,
+                      }));
+                    }
                     setOpen(false);
                   }}
                 >
