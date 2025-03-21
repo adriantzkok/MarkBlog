@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import PostCard from "@/app/components/PostCard";
 import { ChevronsRight } from "lucide-react";
-import { fetchBlogs, fetchBlogsCount } from "../api/dbqueries";
+import { fetchBlogs, fetchBlogCount } from "../api/dbqueries";
 import Link from "next/link";
 
 interface IPostContainerProps {
@@ -36,7 +36,7 @@ const PostContainer = ({
   const fetchPosts = async () => {
     setLoading(true);
     try {
-      const fetchedBlogCount = await fetchBlogsCount(
+      const fetchedBlogCount = await fetchBlogCount(
         title_filter,
         topic_filter,
         tags_filter

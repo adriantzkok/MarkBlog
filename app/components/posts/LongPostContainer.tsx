@@ -3,9 +3,10 @@ import PostCard from "@/app/components/PostCard";
 import Link from "next/link";
 import { ChevronsDown } from "lucide-react";
 import { IPostMetadata } from "@/app/types/interface";
-import { fetchBlogsCount, fetchBlogs } from "@/app/api/dbqueries";
+import { fetchBlogs } from "@/app/api/dbqueries";
 import React, { useState, useEffect } from "react";
 import { IFilters } from "@/app/types/interface";
+import { fetchBlogCount } from "@/app/api/dbqueries";
 
 const LongPostContainer: React.FC<{ filters: IFilters }> = ({ filters }) => {
   const [posts, setPosts] = useState<IPostMetadata[]>([]);
@@ -23,7 +24,8 @@ const LongPostContainer: React.FC<{ filters: IFilters }> = ({ filters }) => {
   const fetchPosts: () => Promise<void> = async () => {
     try {
       setLoading(true);
-      const fetchedBlogCount = await fetchBlogsCount();
+      // const fetchedBlogCount = await fetchBlogsCount();
+      const fetchedBlogCount = await fetchBlogCount();
       if (fetchedBlogCount) {
         const fetchedPosts = await fetchBlogs(pagination.start, pagination.end);
         setPosts((prevPosts) => [...prevPosts, ...(fetchedPosts || [])]);

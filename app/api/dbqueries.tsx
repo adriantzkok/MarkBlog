@@ -12,7 +12,7 @@ export async function fetchBlogs(
 ) {
   const query = supabase
     .from("BLOG_POSTS")
-    .select()
+    .select("*")
     .order("created_at", { ascending: false })
     .range(range_start, range_end);
   // Apply filters if they exist
@@ -133,4 +133,33 @@ export async function fetchPostTags() {
   }
 
   return data;
+}
+
+export async function fetchBlogCount(
+  title_filter?: string,
+  topic_filter?: string,
+  tags_filter?: string[]
+) {
+  const query = supabase.from("BLOG_POSTS").select("id");
+
+  if (title_filter) {
+    query.ilike("title", `%${title_filter}%`); // Case-insensitive match
+  }
+
+  if (topic_filter) {
+    query.ilike("topic", `%${topic_filter}%`); // Case-insensitive match
+  }
+
+  if (tags_filter) {
+    query.contains("tags", tags_filter);
+  }
+
+  const { data, error } = await query;
+
+  if (error) {
+    console.error("Error fetching blogs:", error);
+    return null;
+  }
+
+  return data?.length;
 }
