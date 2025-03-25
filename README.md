@@ -15,3 +15,7 @@ Significant changes from V1 include an update of the framework (now using Next.j
 ## About 📝
 
 This project is built using the **Next.js** framework for the frontend. For the backend, I utilized the **Supabase** API to store my blog post content and its associated metadata. To simplify the blog writing, I've chosen **Markdown** as the primary format for blog posts, which will be rendered on the frontend using rehype.
+
+## Development Process
+
+To learn more about my Development Process, you can head to [here](https://adrian-blog.vercel.app/posts/57)
