@@ -19,5 +19,10 @@
     "allPosts": "All Posts",
     "filters": "Filters",
     "more": "More Posts..."
+  },
+  "Filters": {
+    "input": "Search Posts...",
+    "topic": "Select Topics...",
+    "tags": "Select Tags..."
   }
 }

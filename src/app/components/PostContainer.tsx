@@ -4,6 +4,7 @@ import PostCard from "@/src/app/components/PostCard";
 import { ChevronsRight } from "lucide-react";
 import { fetchBlogs, fetchBlogCount } from "../api/dbqueries";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 interface IPostContainerProps {
   title_filter?: string;
@@ -33,6 +34,8 @@ const PostContainer = ({
   });
   const [loading, setLoading] = useState<boolean>(false);
   const [loadDisabled, setLoadDisabled] = useState<boolean>(false);
+  const t = useTranslations("PostsPage");
+
   const fetchPosts = async () => {
     setLoading(true);
     try {
@@ -106,7 +109,7 @@ const PostContainer = ({
                 className="text-xs text-gray-400 cursor-pointer"
                 onClick={fetchPosts}
               >
-                More...
+                {t("more")}
               </p>
             </div>
           )
