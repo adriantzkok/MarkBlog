@@ -2,6 +2,7 @@ import TagFilterComboBox from "@/src/app/components/posts/filters/TagFilterCombo
 import { useContext, useEffect, useState } from "react";
 import { FilterContext } from "@/src/app/components/posts/PostArea";
 import { fetchPostTags } from "@/src/app/api/dbqueries";
+import { useTranslations } from "next-intl";
 
 interface ITag {
   tags: string[];
@@ -55,11 +56,12 @@ const TagFilter = () => {
       tags_filter: selected_tags,
     }));
   }, [selected, setFilters]); // Added dependencies to useEffect
+  const t = useTranslations("Filters");
 
   return (
     <>
       <TagFilterComboBox
-        placeholder="Select Tags..."
+        placeholder={t("tags")}
         // @ts-expect-error outside order component
         options={tags}
         emptyIndicator={

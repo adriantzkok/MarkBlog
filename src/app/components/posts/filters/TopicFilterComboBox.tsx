@@ -19,6 +19,7 @@ import {
 } from "@/components/ui/popover";
 import { useContext } from "react";
 import { FilterContext } from "@/src/app/components/posts/PostArea";
+import { useTranslations } from "next-intl";
 
 interface Itopics {
   topic: string;
@@ -34,7 +35,7 @@ export function TopicFilterComboBox({ topics }: ITopicFilterComboBox) {
   const [open, setOpen] = React.useState(false);
   const [value, setValue] = React.useState("");
   const alltopics = topics || [];
-  console.log(value);
+  const t = useTranslations("Filters");
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -47,13 +48,13 @@ export function TopicFilterComboBox({ topics }: ITopicFilterComboBox) {
         >
           {value
             ? alltopics.find((atopic) => atopic.topic === value)?.topic
-            : "Select Topics..."}
+            : t("topic")}
           <ChevronsUpDown className="opacity-50" />
         </Button>
       </PopoverTrigger>
       <PopoverContent className="lg:w-[200px] p-0">
         <Command>
-          <CommandInput placeholder="Search Topics..." className="h-9" />
+          <CommandInput placeholder={t("topic")} className="h-9" />
           <CommandList>
             <CommandEmpty>No topics found.</CommandEmpty>
             <CommandGroup>
