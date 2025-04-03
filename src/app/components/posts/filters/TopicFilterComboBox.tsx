@@ -1,10 +1,7 @@
-"use client";
+"use client"; // This directive should be at the very top of your file
 
 import * as React from "react";
 import { Check, ChevronsUpDown } from "lucide-react";
-import { Dispatch, SetStateAction } from "react";
-import { IFilters } from "@/src/app/types/interface";
-
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
@@ -20,22 +17,24 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { useContext } from "react";
+import { FilterContext } from "@/src/app/components/posts/PostArea";
 
-interface IComboboxProps {
-  setFilters: Dispatch<SetStateAction<IFilters>>;
-  topics: ITopics[];
-}
-
-interface ITopics {
+interface Itopics {
   topic: string;
 }
 
-export function Combobox({ setFilters, topics }: IComboboxProps) {
+interface ITopicFilterComboBox {
+  topics: Itopics[];
+}
+
+export function TopicFilterComboBox({ topics }: ITopicFilterComboBox) {
+  const { setFilters } = useContext(FilterContext) || {};
+
   const [open, setOpen] = React.useState(false);
   const [value, setValue] = React.useState("");
-
-  // Ensure alltopics is defined, either through props or const
-  const alltopics = topics || []; // Use topics from props or an empty array
+  const alltopics = topics || [];
+  console.log(value);
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -44,7 +43,7 @@ export function Combobox({ setFilters, topics }: IComboboxProps) {
           variant="combobox"
           role="combobox"
           aria-expanded={open}
-          className="w-[200px] justify-between text-muted-foreground"
+          className="lg:w-[200px] justify-between text-muted-foreground"
         >
           {value
             ? alltopics.find((atopic) => atopic.topic === value)?.topic
@@ -52,7 +51,7 @@ export function Combobox({ setFilters, topics }: IComboboxProps) {
           <ChevronsUpDown className="opacity-50" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[200px] p-0">
+      <PopoverContent className="lg:w-[200px] p-0">
         <Command>
           <CommandInput placeholder="Search Topics..." className="h-9" />
           <CommandList>
@@ -63,11 +62,19 @@ export function Combobox({ setFilters, topics }: IComboboxProps) {
                   key={index}
                   value={atopic.topic}
                   onSelect={(currentValue) => {
-                    setValue(currentValue === value ? "" : currentValue);
-                    setFilters((prevFilters) => ({
-                      ...prevFilters,
-                      topic: currentValue, // Use currentValue instead of value
-                    }));
+                    if (currentValue === value) {
+                      setValue("");
+                      setFilters((prevFilters) => ({
+                        ...prevFilters,
+                        topic_filter: "",
+                      }));
+                    } else {
+                      setValue(currentValue);
+                      setFilters((prevFilters) => ({
+                        ...prevFilters,
+                        topic_filter: currentValue,
+                      }));
+                    }
                     setOpen(false);
                   }}
                 >

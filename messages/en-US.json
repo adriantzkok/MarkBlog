@@ -1,0 +1,23 @@
+{
+  "HomePage": {
+    "highlightedposts": "HIGHLIGHTED POSTS",
+    "recentposts": "RECENT POSTS",
+    "lotwposts": "LOTW POSTS",
+    "dataengposts": "DATA ENGINEERING POSTS"
+  },
+  "AboutPage": {
+    "aboutheader": "About Me",
+    "aboutcontent": "I recently graduated from the University of Toronto with a degree in Management and International Business. Although I was born and raised in Toronto, I took the opportunity to travel as the pandemic ended and completed a four-month exchange semester at Singapore Management University in Singapore, studying Quantitative Finance and Banking. After, I completed another exchange semester at National Taiwan University, studying Chinese. Now, I am currently in Hong Kong working in the consulting industry! I hope to share my experience and what I have learned in this website! Hopefully people who wish to follow a similar path can benefit greatly from my sharings."
+  },
+  "NavBar": {
+    "blog": "BLOG",
+    "about": "About",
+    "posts": "Posts",
+    "pages": "Pages"
+  },
+  "PostsPage": {
+    "allPosts": "All Posts",
+    "filters": "Filters",
+    "more": "More Posts..."
+  }
+}
