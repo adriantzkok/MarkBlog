@@ -13,6 +13,19 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
+export function displayCurrentLocale(locale: string) {
+  switch (locale) {
+    case "en-US":
+      return "A";
+    case "ja":
+      return "あ";
+    case "zh-CN":
+      return "简";
+    case "zh-TW":
+      return "繁";
+  }
+}
+
 export async function parseMarkdown(markdown: string) {
   const result = await unified()
     .use(remarkParse)

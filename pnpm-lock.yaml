@@ -26,9 +26,12 @@ importers:
       '@vercel/analytics':
         specifier: ^1.5.0
         version: 1.5.0(next@15.2.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react@19.0.0)
+<<<<<<< HEAD
       '@vercel/speed-insights':
         specifier: ^1.2.0
         version: 1.2.0(next@15.2.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react@19.0.0)
+=======
+>>>>>>> lg-ch
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -1125,6 +1128,7 @@ packages:
       vue-router:
         optional: true
 
+<<<<<<< HEAD
   '@vercel/speed-insights@1.2.0':
     resolution: {integrity: sha512-y9GVzrUJ2xmgtQlzFP2KhVRoCglwfRQgjyfY607aU0hh0Un6d0OUyrJkjuAlsV18qR4zfoFPs/BiIj9YDS6Wzw==}
     peerDependencies:
@@ -1148,6 +1152,8 @@ packages:
       vue-router:
         optional: true
 
+=======
+>>>>>>> lg-ch
   acorn-jsx@5.3.2:
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
     peerDependencies:
@@ -3794,11 +3800,14 @@ snapshots:
       next: 15.2.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       react: 19.0.0
 
+<<<<<<< HEAD
   '@vercel/speed-insights@1.2.0(next@15.2.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react@19.0.0)':
     optionalDependencies:
       next: 15.2.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       react: 19.0.0
 
+=======
+>>>>>>> lg-ch
   acorn-jsx@5.3.2(acorn@8.14.1):
     dependencies:
       acorn: 8.14.1

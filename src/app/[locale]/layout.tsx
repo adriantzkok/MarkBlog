@@ -6,7 +6,10 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/src/i18n/routing";
 import { Analytics } from "@vercel/analytics/react";
+<<<<<<< HEAD
 import { SpeedInsights } from "@vercel/speed-insights/next";
+=======
+>>>>>>> lg-ch
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -43,7 +46,10 @@ export default async function LocaleLayout({
       >
         <NextIntlClientProvider>
           <Analytics />
+<<<<<<< HEAD
           <SpeedInsights />
+=======
+>>>>>>> lg-ch
           <NavBar />
           {children}
         </NextIntlClientProvider>
