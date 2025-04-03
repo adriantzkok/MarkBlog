@@ -11,8 +11,8 @@
   },
   "NavBar": {
     "blog": "BLOG",
-    "about": "About",
-    "posts": "Posts",
+    "about": "about",
+    "posts": "posts",
     "pages": "Pages"
   },
   "PostsPage": {

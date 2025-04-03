@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/sheet";
 import { routes } from "@/src/app/index/NavBarIndex";
 import { useTranslations } from "next-intl";
+import { LanguageToggle } from "./LanguageToggle";
 
 const NavBar = () => {
   const t = useTranslations("NavBar");
@@ -30,11 +31,13 @@ const NavBar = () => {
             <li>{t(post.name)}</li>
           </Link>
         ))}
+        <LanguageToggle />
       </ul>
       <Sheet>
         <SheetTrigger>
           <Menu size={18} className="md:hidden" />
         </SheetTrigger>
+        <LanguageToggle buttonClassName="md:hidden" />
         <SheetContent className="mt-24">
           <SheetHeader>
             <SheetTitle>{t("pages")}</SheetTitle>
