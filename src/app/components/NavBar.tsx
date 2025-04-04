@@ -11,10 +11,7 @@ import {
 } from "@/components/ui/sheet";
 import { routes } from "@/src/app/index/NavBarIndex";
 import { useTranslations } from "next-intl";
-<<<<<<< HEAD
-=======
 import { LanguageToggle } from "./LanguageToggle";
->>>>>>> lg-ch
 
 const NavBar = () => {
   const t = useTranslations("NavBar");
