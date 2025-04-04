@@ -46,10 +46,7 @@ export default async function LocaleLayout({
       >
         <NextIntlClientProvider>
           <Analytics />
-<<<<<<< HEAD
           <SpeedInsights />
-=======
->>>>>>> lg-ch
           <NavBar />
           {children}
         </NextIntlClientProvider>
