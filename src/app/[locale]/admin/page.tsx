@@ -1,45 +1,110 @@
 import React from "react";
 
-const Page = () => {
+const DashboardPage = () => {
   return (
-    <div className="h-screen w-screen flex flex-col items-center justify-center bg-gray-100">
-      <div className="w-full max-w-md p-8 bg-white rounded-lg shadow-lg">
-        <h1 className="text-2xl font-bold text-gray-800 mb-6 text-center">
-          Admin Login
-        </h1>
-        <form className="space-y-6">
-          <div className="flex flex-col space-y-4">
-            <label htmlFor="username" className="text-gray-700 font-medium">
-              Username
-            </label>
-            <input
-              id="username"
-              type="text"
-              className="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Enter your username"
-            />
+    <div className="h-screen w-screen flex flex-col bg-gray-100">
+      {/* Navigation Bar */}
+      <nav className="h-16 bg-white shadow-md flex items-center px-6">
+        <h1 className="text-xl font-bold text-gray-800">Admin Dashboard</h1>
+      </nav>
+
+      {/* Main Content */}
+      <div className="flex flex-1">
+        {/* Sidebar */}
+        <aside className="w-64 bg-white shadow-md p-6">
+          <ul className="space-y-4">
+            <li>
+              <a
+                href="#"
+                className="text-gray-700 font-medium hover:text-blue-500 transition"
+              >
+                Dashboard
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                className="text-gray-700 font-medium hover:text-blue-500 transition"
+              >
+                Users
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                className="text-gray-700 font-medium hover:text-blue-500 transition"
+              >
+                Settings
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                className="text-gray-700 font-medium hover:text-blue-500 transition"
+              >
+                Logout
+              </a>
+            </li>
+          </ul>
+        </aside>
+
+        {/* Main Dashboard Content */}
+        <main className="flex-1 p-6">
+          <h2 className="text-2xl font-bold text-gray-800 mb-6">
+            Welcome, Admin!
+          </h2>
+
+          {/* Widgets */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-lg font-bold text-gray-800">Total Users</h3>
+              <p className="text-2xl font-bold text-blue-500 mt-4">1,234</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-lg font-bold text-gray-800">
+                Active Sessions
+              </h3>
+              <p className="text-2xl font-bold text-green-500 mt-4">567</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-lg font-bold text-gray-800">Pending Tasks</h3>
+              <p className="text-2xl font-bold text-red-500 mt-4">42</p>
+            </div>
           </div>
-          <div className="flex flex-col space-y-4">
-            <label htmlFor="password" className="text-gray-700 font-medium">
-              Password
-            </label>
-            <input
-              id="password"
-              type="password"
-              className="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Enter your password"
-            />
+
+          {/* Recent Activity */}
+          <div className="mt-8">
+            <h3 className="text-xl font-bold text-gray-800 mb-4">
+              Recent Activity
+            </h3>
+            <ul className="space-y-4">
+              <li className="bg-white p-4 rounded-lg shadow-md">
+                <p className="text-gray-700">
+                  <span className="font-bold">John Doe</span> updated their
+                  profile.
+                </p>
+                <p className="text-sm text-gray-500">5 minutes ago</p>
+              </li>
+              <li className="bg-white p-4 rounded-lg shadow-md">
+                <p className="text-gray-700">
+                  <span className="font-bold">Jane Smith</span> added a new
+                  post.
+                </p>
+                <p className="text-sm text-gray-500">10 minutes ago</p>
+              </li>
+              <li className="bg-white p-4 rounded-lg shadow-md">
+                <p className="text-gray-700">
+                  <span className="font-bold">Admin</span> updated site
+                  settings.
+                </p>
+                <p className="text-sm text-gray-500">30 minutes ago</p>
+              </li>
+            </ul>
           </div>
-          <button
-            type="submit"
-            className="bg-black text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-200"
-          >
-            Login
-          </button>
-        </form>
+        </main>
       </div>
     </div>
   );
 };
 
-export default Page;
+export default DashboardPage;

@@ -69,7 +69,10 @@ const PostDashboard = () => {
         onError={onError}
         trigger={trigger}
       />
-      <PostPreview previewData={previewPostCardValues} />
+      <PostPreview
+        previewPostCardData={previewPostValues}
+        previewPostData={previewPostValues}
+      />
     </div>
   );
 };
