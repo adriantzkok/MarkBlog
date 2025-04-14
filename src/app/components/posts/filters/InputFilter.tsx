@@ -1,7 +1,7 @@
 import { Input } from "@/components/ui/input";
 import { FilterContext } from "@/src/app/components/posts/PostArea";
 import { useContext } from "react";
-import { IFilterContext } from "@/src/app/types/interface";
+import { IFilterContext } from "@/lib/types/interface";
 import { useTranslations } from "next-intl";
 
 const InputFilter = () => {

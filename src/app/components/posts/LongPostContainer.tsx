@@ -2,10 +2,10 @@
 import PostCard from "@/src/app/components/PostCard";
 import Link from "next/link";
 import { ChevronsDown } from "lucide-react";
-import { IPostMetadata } from "@/src/app/types/interface";
+import { IPostMetadata } from "@/lib/types/interface";
 import { fetchBlogs } from "@/src/app/api/dbqueries";
 import React, { useState, useEffect } from "react";
-import { IFilters } from "@/src/app/types/interface";
+import { IFilters } from "@/lib/types/interface";
 import { fetchBlogCount } from "@/src/app/api/dbqueries";
 import { useTranslations } from "next-intl";
 

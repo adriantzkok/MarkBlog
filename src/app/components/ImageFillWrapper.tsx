@@ -3,11 +3,16 @@ import Image from "next/image";
 interface IImageFillWrapper {
   className?: string;
   image_link?: string;
+  onError?: () => void;
 }
 
 import React from "react";
 
-const ImageFillWrapper = ({ className, image_link }: IImageFillWrapper) => {
+const ImageFillWrapper = ({
+  className,
+  image_link,
+  onError,
+}: IImageFillWrapper) => {
   return (
     <Image
       src={
@@ -19,6 +24,7 @@ const ImageFillWrapper = ({ className, image_link }: IImageFillWrapper) => {
       style={{ objectFit: "cover" }}
       className={className}
       priority
+      onError={onError}
     />
   );
 };

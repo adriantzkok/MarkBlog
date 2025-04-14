@@ -2,7 +2,7 @@
 import React, { useState, createContext } from "react";
 import FilterPostContainer from "@/src/app/components/posts/FilterPostContainer";
 import LongPostContainer from "@/src/app/components/posts/LongPostContainer";
-import { IFilters, IFilterContext } from "@/src/app/types/interface";
+import { IFilters, IFilterContext } from "@/lib/types/interface";
 
 // Create the FilterContext with the correct type
 export const FilterContext = createContext<IFilterContext>({
