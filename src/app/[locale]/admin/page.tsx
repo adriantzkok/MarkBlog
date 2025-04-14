@@ -18,31 +18,7 @@ const DashboardPage = () => {
                 href="#"
                 className="text-gray-700 font-medium hover:text-blue-500 transition"
               >
-                Dashboard
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="text-gray-700 font-medium hover:text-blue-500 transition"
-              >
-                Users
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="text-gray-700 font-medium hover:text-blue-500 transition"
-              >
-                Settings
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="text-gray-700 font-medium hover:text-blue-500 transition"
-              >
-                Logout
+                Create
               </a>
             </li>
           </ul>

@@ -1,5 +1,5 @@
 import React from "react";
-import { login, OTPEmailLogin } from "@/src/app/api/login";
+import { login } from "@/src/app/api/login";
 
 const Page = () => {
   return (
