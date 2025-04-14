@@ -33,3 +33,13 @@ export interface IPostMetadata {
 export interface ITopics {
   topic: string;
 }
+
+export interface IPostCard {
+  topic?: string; // Make topic optional
+  title?: string; // Make title optional
+  tags?: string[]; // Make tags optional
+  image_link?: string; // Make image_link optional
+  loading: boolean; // Loading state is required
+  className?: string; // Optional className
+  onImageError?: () => void; // Optional error handler
+}

@@ -2,7 +2,7 @@ import MaxWidthWrapper from "@/src/app/components/MaxWidthWrapper";
 import ImageFillWrapper from "@/src/app/components/ImageFillWrapper";
 import { fetchPost } from "@/src/app/api/dbqueries";
 import ContentWrapper from "@/src/app/components/post/ContentWrapper";
-import { IPostContentMetadata } from "@/src/app/types/interface";
+import { IPostContentMetadata } from "@/lib/types/interface";
 
 const page = async ({ params }: { params: Promise<{ post: string }> }) => {
   const { post: id } = await params;

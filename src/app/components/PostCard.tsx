@@ -2,14 +2,7 @@ import React from "react";
 import ImageFillWrapper from "@/src/app/components/ImageFillWrapper";
 import { cn } from "@/lib/utils";
 import LoadingPostCard from "@/src/app/components/loaders/LoadingPostCard";
-interface IPostCard {
-  topic?: string; // Make topic optional
-  title?: string; // Make title optional
-  tags?: string[]; // Make tags optional
-  image_link?: string; // Make image_link optional
-  loading: boolean; // Loading state is required
-  className?: string; // Optional className
-}
+import { IPostCard } from "@/lib/types/interface";
 
 const PostCard = ({
   topic,
@@ -17,6 +10,7 @@ const PostCard = ({
   tags,
   image_link,
   className,
+  onImageError,
   loading,
 }: IPostCard) => {
   let displayTitle = title; // Use a new variable to store the modified title
@@ -33,7 +27,10 @@ const PostCard = ({
       )}
     >
       <div className="h-3/5 w-full relative">
-        <ImageFillWrapper image_link={image_link}></ImageFillWrapper>
+        <ImageFillWrapper
+          image_link={image_link}
+          onError={onImageError}
+        ></ImageFillWrapper>
       </div>
       <div className="px-6 pt-3.5 flex flex-col gap-y-2.5">
         <div className="flex flex-col gap-y-0.5">

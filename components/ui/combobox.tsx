@@ -3,7 +3,7 @@
 import * as React from "react";
 import { Check, ChevronsUpDown } from "lucide-react";
 import { Dispatch, SetStateAction } from "react";
-import { IFilters } from "@/src/app/types/interface";
+import { IFilters } from "@/lib/types/interface";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";

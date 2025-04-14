@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { TopicFilterComboBox } from "@/src/app/components/posts/filters/TopicFilterComboBox";
 import { fetchTopics } from "@/src/app/api/dbqueries";
 import _ from "lodash";
-import { ITopics } from "@/src/app/types/interface";
+import { ITopics } from "@/lib/types/interface";
 
 const TopicFilter = () => {
   const [topics, setTopics] = useState<ITopics[]>([]);
