@@ -1,4 +1,4 @@
-# Easy Personal Blog V2! ✍️
+# MarkBlog! ✍️
 
 **Note, you can access a current version of this blog [here](https://adrian-blog.vercel.app/)!**
 
