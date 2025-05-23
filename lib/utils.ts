@@ -8,10 +8,8 @@ import rehypeStringify from "rehype-stringify";
 import rehypeHighlight from "rehype-highlight";
 import remarkGfm from "remark-gfm";
 import rehypeSanitize from "rehype-sanitize";
-
-import remarkMath from 'remark-math';
-import rehypeKatex from 'rehype-katex'
-
+import rehypeMathjax from "rehype-mathjax";
+import remarkMath from "remark-math";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -36,11 +34,11 @@ export async function parseMarkdown(markdown: string) {
     .use(remarkMath)
     .use(remarkRehype, { allowDangerousHtml: true })
     .use(rehypeRaw)
-    .use(rehypeKatex)
+    .use(remarkGfm)
     .use(rehypeHighlight)
     .use(rehypeStringify)
-    .use(remarkGfm)
     .use(rehypeSanitize)
+    .use(rehypeMathjax)
     .process(markdown);
 
   return result;
