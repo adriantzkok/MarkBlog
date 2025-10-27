@@ -3,7 +3,8 @@
     "highlightedposts": "精選文章",
     "recentposts": "最近發佈的文章",
     "lotwposts": "本週學習系列的文章",
-    "dataengposts": "資料工程文章"
+    "dataengposts": "資料工程文章",
+    "technicalarticles": "技術文章"
   },
   "AboutPage": {
     "aboutheader": "關於我",

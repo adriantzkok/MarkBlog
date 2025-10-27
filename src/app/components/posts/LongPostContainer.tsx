@@ -9,7 +9,13 @@ import { IFilters } from "@/lib/types/interface";
 import { fetchBlogCount } from "@/src/app/api/dbqueries";
 import { useTranslations } from "next-intl";
 
-const LongPostContainer: React.FC<{ filters: IFilters }> = ({ filters }) => {
+const LongPostContainer = ({
+  filters,
+  articles,
+}: {
+  filters: IFilters;
+  articles: string;
+}) => {
   const t = useTranslations("PostsPage");
   const [posts, setPosts] = useState<IPostMetadata[]>([]);
   const [filteredPosts, setFilteredPosts] = useState<IPostMetadata[]>([]);
@@ -63,6 +69,12 @@ const LongPostContainer: React.FC<{ filters: IFilters }> = ({ filters }) => {
     if (filters.tags_filter && filters.tags_filter.length > 0) {
       updatedFilteredPosts = updatedFilteredPosts.filter((post) =>
         post.tags.some((tag) => filters.tags_filter.includes(tag))
+      );
+    }
+
+    if (filters.tags_filter && filters.tags_filter.length > 0) {
+      updatedFilteredPosts = updatedFilteredPosts.filter((post) =>
+        post.tags.some((tag) => filters.tags_filter.includes("articles"))
       );
     }
 

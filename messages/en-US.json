@@ -3,7 +3,8 @@
     "highlightedposts": "HIGHLIGHTED POSTS",
     "recentposts": "RECENT POSTS",
     "lotwposts": "LOTW POSTS",
-    "dataengposts": "DATA ENGINEERING POSTS"
+    "dataengposts": "DATA ENGINEERING POSTS",
+    "technicalarticles": "TECHNICAL ARTICLES"
   },
   "AboutPage": {
     "aboutheader": "About Me",
