@@ -11,10 +11,8 @@ import { useTranslations } from "next-intl";
 
 const LongPostContainer = ({
   filters,
-  articles,
 }: {
   filters: IFilters;
-  articles: string;
 }) => {
   const t = useTranslations("PostsPage");
   const [posts, setPosts] = useState<IPostMetadata[]>([]);
@@ -69,12 +67,6 @@ const LongPostContainer = ({
     if (filters.tags_filter && filters.tags_filter.length > 0) {
       updatedFilteredPosts = updatedFilteredPosts.filter((post) =>
         post.tags.some((tag) => filters.tags_filter.includes(tag))
-      );
-    }
-
-    if (filters.tags_filter && filters.tags_filter.length > 0) {
-      updatedFilteredPosts = updatedFilteredPosts.filter((post) =>
-        post.tags.some((tag) => filters.tags_filter.includes("articles"))
       );
     }
 
